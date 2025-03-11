@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: 5e305043aa488b24f9fbbd312d480ffd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7388434152791473888
+    second: TilesEternalKnight_0
+  - first:
+      213: 994988119881474078
+    second: TilesEternalKnight_1
+  - first:
+      213: 278134286794952558
+    second: TilesEternalKnight_2
+  - first:
+      213: -7700181916070744622
+    second: TilesEternalKnight_3
+  - first:
+      213: -3491456655215808934
+    second: TilesEternalKnight_4
+  - first:
+      213: -6800804547412091116
+    second: TilesEternalKnight_5
+  - first:
+      213: 5154054431500684536
+    second: TilesEternalKnight_6
+  - first:
+      213: -2816547336578367500
+    second: TilesEternalKnight_7
+  - first:
+      213: 4587235363129671223
+    second: TilesEternalKnight_8
+  - first:
+      213: 2291580700353992683
+    second: TilesEternalKnight_9
+  - first:
+      213: 4202547124289231369
+    second: TilesEternalKnight_10
+  - first:
+      213: 153801187967133940
+    second: TilesEternalKnight_11
+  - first:
+      213: 4521756245465371165
+    second: TilesEternalKnight_12
+  - first:
+      213: 1567710364144156510
+    second: TilesEternalKnight_13
+  - first:
+      213: -6404161356359154003
+    second: TilesEternalKnight_14
+  - first:
+      213: -1783763764830713523
+    second: TilesEternalKnight_15
+  - first:
+      213: -9046590686184316718
+    second: TilesEternalKnight_16
+  - first:
+      213: -3210109872285674981
+    second: TilesEternalKnight_17
+  - first:
+      213: -2355898641771308841
+    second: TilesEternalKnight_18
+  - first:
+      213: -2471392148661213477
+    second: TilesEternalKnight_19
+  - first:
+      213: -3904885633693590114
+    second: TilesEternalKnight_20
+  - first:
+      213: 5678019268127391456
+    second: TilesEternalKnight_21
+  - first:
+      213: 2531504160043943803
+    second: TilesEternalKnight_22
+  - first:
+      213: 8792134197492121821
+    second: TilesEternalKnight_23
+  - first:
+      213: 5805251123382531729
+    second: TilesEternalKnight_24
+  - first:
+      213: -4536838832060819046
+    second: TilesEternalKnight_25
+  - first:
+      213: 3065298148789503651
+    second: TilesEternalKnight_26
+  - first:
+      213: 3744543933769680950
+    second: TilesEternalKnight_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TilesEternalKnight_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1308
+        width: 204
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eeff7367bdf88660800000000000000
+      internalID: 7388434152791473888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_1
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1321
+        width: 204
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e10e4416c68eecd00800000000000000
+      internalID: 994988119881474078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_2
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 1315
+        width: 205
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6f054409a12cd300800000000000000
+      internalID: 278134286794952558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_3
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 1321
+        width: 204
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dd67ba3855732590800000000000000
+      internalID: -7700181916070744622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1312
+        width: 204
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e203dabaadb8fc0800000000000000
+      internalID: -3491456655215808934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_5
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1315
+        width: 184
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41f14acdb40be91a0800000000000000
+      internalID: -6800804547412091116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_6
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1099
+        width: 185
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fc40a6b231e68740800000000000000
+      internalID: 5154054431500684536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_7
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1092
+        width: 218
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff7c2ebe1d99e8d0800000000000000
+      internalID: -2816547336578367500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_8
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 1099
+        width: 184
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73e3470324229af30800000000000000
+      internalID: 4587235363129671223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_9
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 1010
+        width: 218
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be79db271845dcf10800000000000000
+      internalID: 2291580700353992683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_10
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1010
+        width: 218
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90a591fe752725a30800000000000000
+      internalID: 4202547124289231369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_11
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1099
+        width: 184
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f860d69d59622200800000000000000
+      internalID: 153801187967133940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_12
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 883
+        width: 204
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d121ed3195180ce30800000000000000
+      internalID: 4521756245465371165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_13
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 896
+        width: 204
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5fb2852540a1c510800000000000000
+      internalID: 1567710364144156510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_14
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 889
+        width: 204
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da6cde55d29df17a0800000000000000
+      internalID: -6404161356359154003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_15
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 883
+        width: 184
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d494d028e4cce37e0800000000000000
+      internalID: -1783763764830713523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_16
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 552
+        width: 218
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d060a9a3bd047280800000000000000
+      internalID: -9046590686184316718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_17
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 572
+        width: 204
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b12107c34166373d0800000000000000
+      internalID: -3210109872285674981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_18
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 552
+        width: 218
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8556adaaa2e4fd0800000000000000
+      internalID: -2355898641771308841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_19
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 648
+        width: 204
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd6eb5e4fe9d3bdd0800000000000000
+      internalID: -2471392148661213477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_20
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 655
+        width: 205
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9dda23843f0fc9c0800000000000000
+      internalID: -3904885633693590114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_21
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 343
+        width: 184
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee7e80e0706cce40800000000000000
+      internalID: 5678019268127391456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_22
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 343
+        width: 185
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b77c7defe95b12320800000000000000
+      internalID: 2531504160043943803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_23
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 439
+        width: 204
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd0051b487fe30a70800000000000000
+      internalID: 8792134197492121821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_24
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 445
+        width: 204
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1963721a325609050800000000000000
+      internalID: 5805251123382531729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_25
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 120
+        width: 218
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9911d39e19e901c0800000000000000
+      internalID: -4536838832060819046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_26
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 133
+        width: 204
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a6c249fc602a8a20800000000000000
+      internalID: 3065298148789503651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesEternalKnight_27
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 120
+        width: 218
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6388f2a4eda47f330800000000000000
+      internalID: 3744543933769680950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TilesEternalKnight_0: 7388434152791473888
+      TilesEternalKnight_1: 994988119881474078
+      TilesEternalKnight_10: 4202547124289231369
+      TilesEternalKnight_11: 153801187967133940
+      TilesEternalKnight_12: 4521756245465371165
+      TilesEternalKnight_13: 1567710364144156510
+      TilesEternalKnight_14: -6404161356359154003
+      TilesEternalKnight_15: -1783763764830713523
+      TilesEternalKnight_16: -9046590686184316718
+      TilesEternalKnight_17: -3210109872285674981
+      TilesEternalKnight_18: -2355898641771308841
+      TilesEternalKnight_19: -2471392148661213477
+      TilesEternalKnight_2: 278134286794952558
+      TilesEternalKnight_20: -3904885633693590114
+      TilesEternalKnight_21: 5678019268127391456
+      TilesEternalKnight_22: 2531504160043943803
+      TilesEternalKnight_23: 8792134197492121821
+      TilesEternalKnight_24: 5805251123382531729
+      TilesEternalKnight_25: -4536838832060819046
+      TilesEternalKnight_26: 3065298148789503651
+      TilesEternalKnight_27: 3744543933769680950
+      TilesEternalKnight_3: -7700181916070744622
+      TilesEternalKnight_4: -3491456655215808934
+      TilesEternalKnight_5: -6800804547412091116
+      TilesEternalKnight_6: 5154054431500684536
+      TilesEternalKnight_7: -2816547336578367500
+      TilesEternalKnight_8: 4587235363129671223
+      TilesEternalKnight_9: 2291580700353992683
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
