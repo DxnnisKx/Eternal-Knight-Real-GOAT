@@ -28,11 +28,21 @@ public class PlayerMovement : MonoBehaviour
         else
             animator.SetBool("isRunning", false);
 
+        if (IsGrounded())
+            animator.SetBool("isJumping", false);
+        else
+            animator.SetBool("isJumping", true);
+
         if (Input.GetButtonDown("Jump") && IsGrounded())
+        {
             rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpPower);
+        }
 
         if (Input.GetButtonUp("Jump") && rb.linearVelocityY > 0)
+        {
             rb.linearVelocity = new Vector2(rb.linearVelocityX, rb.linearVelocityY * .5f);
+            //animator.SetBool("isJumping", true);
+        }
 
         Flip();
     }
