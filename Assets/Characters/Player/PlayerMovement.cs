@@ -6,15 +6,27 @@ public class PlayerMovement : MonoBehaviour
     public float walkSpeed = 16f;
     public float jumpPower = 20f;
     private bool isFacingRight = true;
+    
+    private Animator animator;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundcheck;
     [SerializeField] private LayerMask groundLayer;
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+
+        if (horizontal != 0)
+            animator.SetBool("isRunning", true);
+        else
+            animator.SetBool("isRunning", false);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
             rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpPower);

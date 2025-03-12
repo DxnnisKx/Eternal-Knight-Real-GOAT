@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Schwert_Pixel_Transparent_0: 2209355618616461529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

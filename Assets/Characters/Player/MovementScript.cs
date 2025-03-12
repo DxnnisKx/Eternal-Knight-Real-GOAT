@@ -10,13 +10,13 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         // Horizontale Bewegung
-        float moveDirection = Input.GetAxisRaw("Horizontal");
-        rb.linearVelocity = new Vector2(moveDirection * moveSpeed, rb.linearVelocity.y);
+        //float moveDirection = Input.GetAxisRaw("Horizontal");
+        //rb.linearVelocity = new Vector2(moveDirection * moveSpeed, rb.linearVelocity.y);
     }
 }
