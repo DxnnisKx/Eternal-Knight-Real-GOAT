@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 119630024}
   - component: {fileID: 119630023}
   - component: {fileID: 119630022}
+  - component: {fileID: 119630025}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -264,6 +265,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119630020}
   m_CullTransparentMesh: 1
+--- !u!114 &119630025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119630020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737515292a7ec65448d7bf574a3fb266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalTextColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverTextColor: {r: 0.77254903, g: 0.47843137, b: 0.47843137, a: 1}
 --- !u!1 &169040266
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,6 +636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 773431880}
   - component: {fileID: 773431881}
+  - component: {fileID: 773431882}
   m_Layer: 5
   m_Name: SettingsMenu
   m_TagString: Untagged
@@ -660,6 +676,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b8e47bfc127c641906e5590b0bfb9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &773431882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773431879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737515292a7ec65448d7bf574a3fb266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalTextColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverTextColor: {r: 0.77254903, g: 0.47843137, b: 0.47843137, a: 1}
 --- !u!1 &1059415927
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +702,7 @@ GameObject:
   - component: {fileID: 1059415931}
   - component: {fileID: 1059415930}
   - component: {fileID: 1059415929}
+  - component: {fileID: 1059415932}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -793,6 +824,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059415927}
   m_CullTransparentMesh: 1
+--- !u!114 &1059415932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059415927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737515292a7ec65448d7bf574a3fb266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalTextColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverTextColor: {r: 0.77254903, g: 0.47843137, b: 0.47843137, a: 1}
 --- !u!1 &1323481761
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,6 +1006,7 @@ GameObject:
   - component: {fileID: 1480962203}
   - component: {fileID: 1480962202}
   - component: {fileID: 1480962201}
+  - component: {fileID: 1480962204}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1010,12 +1056,12 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.6981132, g: 0.6157885, b: 0.6157885, a: 0.3019608}
+    m_HighlightedColor: {r: 0.79622644, g: 0.6775436, b: 0.6775436, a: 0.3019608}
     m_PressedColor: {r: 0.4811321, g: 0.4561677, b: 0.4561677, a: 0.48235294}
     m_SelectedColor: {r: 0.2830189, g: 0.26566395, b: 0.26566395, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
+    m_FadeDuration: 1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -1082,6 +1128,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480962199}
   m_CullTransparentMesh: 1
+--- !u!114 &1480962204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480962199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737515292a7ec65448d7bf574a3fb266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalTextColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverTextColor: {r: 0.7735849, g: 0.4772873, b: 0.4772873, a: 1}
 --- !u!1 &1506445891
 GameObject:
   m_ObjectHideFlags: 0
