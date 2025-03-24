@@ -1767,7 +1767,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 413b7921cd753b2498e9739dffcc7109, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1792,7 +1792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  jumpPower: 4
+  jumpPower: 9
   rb: {fileID: 933898113}
   groundcheck: {fileID: 1150147281}
   groundLayer:
@@ -1856,7 +1856,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2, y: 2.8}
+  m_Size: {x: 2, y: 2.75}
   m_EdgeRadius: 0
 --- !u!95 &933898119
 Animator:
