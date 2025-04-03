@@ -2,35 +2,49 @@ using UnityEngine;
 
 public class GameSettingsManager : MonoBehaviour
 {
-    public static GameSettingsManager Instance { get; private set; }
+    // Singleton pattern
+    private static GameSettingsManager _instance;
+    public static GameSettingsManager Instance { get { return _instance; } }
 
-    // Setting for displaying FPS
-    public bool ShowFPS { get; private set; } = false;
+    // Properties
+    private bool _showFPS = false;
+    public bool ShowFPS { get { return _showFPS; } }
+
+    // PlayerPrefs keys
+    private const string SHOW_FPS_KEY = "ShowFPS";
 
     private void Awake()
     {
-        // Singleton pattern to ensure only one instance exists
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        // Singleton implementation
+        if (_instance != null && _instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        // Load saved settings
+        LoadSettings();
     }
 
-    // Method to toggle FPS display setting
-    public void SetShowFPS(bool showFPS)
+    private void LoadSettings()
     {
-        ShowFPS = showFPS;
+        _showFPS = PlayerPrefs.GetInt(SHOW_FPS_KEY, 0) == 1;
+    }
 
-        // Find and update any active FPS displays
-        FPSscript[] displays = FindObjectsOfType<FPSscript>();
-        foreach (var display in displays)
-        {
-            display.ShowFpsCounter(ShowFPS);
-        }
+    // Method to set and save the ShowFPS setting
+    public void SetShowFPS(bool show)
+    {
+        _showFPS = show;
+        PlayerPrefs.SetInt(SHOW_FPS_KEY, show ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+
+    // Toggle FPS counter
+    public void ToggleFPS()
+    {
+        SetShowFPS(!_showFPS);
     }
 }
