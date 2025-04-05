@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class EndlessMapGenerator : MonoBehaviour
 {
     public Tilemap tilemap;             // Referenz zur Tilemap
     public TileBase groundTile;         // Das Bodentile
+    //public GameObject deathZone;        //Todeszone
     public int chunkWidth = 10;         // Breite der generierten Chunks
     public int maxJumpWidth = 3;        // Maximale Breite einer Lücke
     public int maxJumpHeight = 2;       // Maximale Höhe, die der Spieler springen muss
@@ -15,6 +19,9 @@ public class EndlessMapGenerator : MonoBehaviour
     public Transform player;            // Referenz zum Spieler
 
     private Vector3Int lastGeneratedPos; // Letzte Position, an der Tiles generiert wurden
+
+    //private float spawnDistance = 20f;
+    //private Vector3 lastDeathZonePos;
 
     private void Start()
     {
@@ -29,7 +36,18 @@ public class EndlessMapGenerator : MonoBehaviour
         {
             GenerateChunk();
         }
+
+        //if (player.position.x > lastDeathZonePos.x + spawnDistance) //Vom Start ausrechnen
+        //{
+        //    CloneDeathZoneToNewLocation();
+        //}
     }
+
+    //void CloneDeathZoneToNewLocation()
+    //{
+    //    var clone = Instantiate(deathZone, new Vector3(lastGeneratedPos.x,Wind,0),Quaternion.identity);
+    //    lastDeathZonePos.x = spawnDistance;
+    //}
 
     void GenerateChunk()
     {
