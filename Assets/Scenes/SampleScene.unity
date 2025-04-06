@@ -1039,7 +1039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 933898108}
-  scene: {fileID: 102900000, guid: 41425659a347e6642a2cb50481e5639e, type: 3}
+  scene: {fileID: 102900000, guid: 45c5bbbdf5b4cc04088f0adf390c1994, type: 3}
 --- !u!1 &685145445
 GameObject:
   m_ObjectHideFlags: 0
