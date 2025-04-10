@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 0.6313726, g: 0.105882354, b: 0.015686275, a: 1}
+  hoverColor: {r: 0.77254903, g: 0.47843137, b: 0.47843137, a: 1}
 --- !u!1 &596421973
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &773431880
 RectTransform:
   m_ObjectHideFlags: 0
@@ -860,14 +860,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4536838832060819046, guid: 5e305043aa488b24f9fbbd312d480ffd, type: 3}
+  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1112,7 +1112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1323481763
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1670,7 +1670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 0.6320754, g: 0.105360866, b: 0.014907437, a: 1}
+  hoverColor: {r: 0.77254903, g: 0.47843137, b: 0.47843137, a: 1}
 --- !u!1 &1582655934
 GameObject:
   m_ObjectHideFlags: 0
