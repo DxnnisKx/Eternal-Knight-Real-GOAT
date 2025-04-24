@@ -18,5 +18,10 @@ public class UpdateDeathZonePosition : MonoBehaviour
         {
             SceneManager.LoadScene(scene.name);
         }
+         //Delete Enemies on touch
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
