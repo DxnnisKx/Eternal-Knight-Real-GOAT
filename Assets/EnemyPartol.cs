@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyPartol : MonoBehaviour
@@ -27,9 +28,16 @@ public class EnemyPartol : MonoBehaviour
         else
             rb.linearVelocity = new Vector2(-speed,0);
 
+        Delay(4f);
+
         if (Vector2.Distance(transform.position, currentPoint.position) < .5f && currentPoint == pointB.transform)
         {
             currentPoint =  pointA.transform;
         }
+    }
+
+    private IEnumerator Delay(float time)
+    {
+        yield return new WaitForSeconds(time);
     }
 }

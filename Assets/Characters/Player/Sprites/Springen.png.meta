@@ -1,28 +1,25 @@
 fileFormatVersion: 2
-guid: 818d3337aa8a83e41bb4b0ea6619d399
+guid: da181a1f1c327f941bbeb3bff21b0970
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7697567570094189535
-    second: Knight_Walk_Sprites_0
+      213: 3399063082633098686
+    second: Laufen_0
   - first:
-      213: 7802232821202277715
-    second: Knight_Walk_Sprites_1
+      213: 8423381091551325588
+    second: Laufen_1
   - first:
-      213: -6304345297062659085
-    second: Knight_Walk_Sprites_2
+      213: 2031011221836115386
+    second: Laufen_2
   - first:
-      213: -9192696384620276503
-    second: Knight_Walk_Sprites_3
+      213: -520299344611602428
+    second: Laufen_3
   - first:
-      213: -1010680137866972243
-    second: Knight_Walk_Sprites_4
+      213: 6388200020178524113
+    second: Laufen_4
   - first:
-      213: 4597153074856813299
-    second: Knight_Walk_Sprites_5
-  - first:
-      213: 4039336795303335111
-    second: Knight_Walk_Sprites_6
+      213: 7563761888161978555
+    second: Laufen_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 125
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -114,6 +111,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -122,9 +132,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 768
-        width: 746
-        height: 768
+        y: 0
+        width: 316
+        height: 361
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79a730bc71046f447aa678038f3979d6
-      internalID: 1538261975
+      spriteID: 38902e40117d65d49904009662c3fed4
+      internalID: -1340809635
       vertices: []
       indices: 
       edges: []
@@ -143,10 +153,10 @@ TextureImporter:
       name: Laufen_1
       rect:
         serializedVersion: 2
-        x: 746
-        y: 768
-        width: 746
-        height: 768
+        x: 316
+        y: 0
+        width: 316
+        height: 361
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,8 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f504acc88a7248640bd4bac557250dbb
-      internalID: -1418304586
+      spriteID: 554646f05a41d81488cba5a92ac9dab0
+      internalID: -1881388578
       vertices: []
       indices: 
       edges: []
@@ -165,10 +175,10 @@ TextureImporter:
       name: Laufen_2
       rect:
         serializedVersion: 2
-        x: 1492
-        y: 768
-        width: 746
-        height: 768
+        x: 632
+        y: 0
+        width: 316
+        height: 361
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1120f836cbe3b594291f180f19754317
-      internalID: -1719275422
+      spriteID: 4e8401fb8d88b3340920a95473a9cd4e
+      internalID: 1920626667
       vertices: []
       indices: 
       edges: []
@@ -187,10 +197,10 @@ TextureImporter:
       name: Laufen_3
       rect:
         serializedVersion: 2
-        x: 2238
-        y: 768
-        width: 746
-        height: 768
+        x: 948
+        y: 0
+        width: 316
+        height: 361
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,8 +209,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c90cb0f2f60fd1b44890b87b3ccca0bd
-      internalID: 853611780
+      spriteID: b1d68eab5bf0e154f801b954ef06d24e
+      internalID: -1121888137
       vertices: []
       indices: 
       edges: []
@@ -209,10 +219,10 @@ TextureImporter:
       name: Laufen_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1264
         y: 0
-        width: 746
-        height: 768
+        width: 316
+        height: 361
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +231,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 855f68f61712f3f47aa4114918a223dd
-      internalID: -734287701
+      spriteID: fc8142704218e6544a23ed6d267d2d3d
+      internalID: 1420480689
       vertices: []
       indices: 
       edges: []
@@ -231,10 +241,10 @@ TextureImporter:
       name: Laufen_5
       rect:
         serializedVersion: 2
-        x: 746
+        x: 1580
         y: 0
-        width: 746
-        height: 768
+        width: 316
+        height: 361
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,52 +253,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95bbebea7fabf3b4e8013d80ba8d4e42
-      internalID: -1606750881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Laufen_6
-      rect:
-        serializedVersion: 2
-        x: 1492
-        y: 0
-        width: 746
-        height: 768
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33ecd495a0fe4b344bac0b2d463d5f8e
-      internalID: -1137444851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Laufen_7
-      rect:
-        serializedVersion: 2
-        x: 2238
-        y: 0
-        width: 746
-        height: 768
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a02abef2a8c4f2b42af7cfd42365ad08
-      internalID: -693955216
+      spriteID: b876ad482f9695748ba99255c7026c46
+      internalID: 501041169
       vertices: []
       indices: 
       edges: []
@@ -297,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bfe6c45c99f711946ab111a20308670f
+    spriteID: eb81b60c9a2be3544922839cee253e40
     internalID: 0
     vertices: []
     indices: 
@@ -307,14 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Laufen_0: 1538261975
-      Laufen_1: -1418304586
-      Laufen_2: -1719275422
-      Laufen_3: 853611780
-      Laufen_4: -734287701
-      Laufen_5: -1606750881
-      Laufen_6: -1137444851
-      Laufen_7: -693955216
+      Laufen_0: -1340809635
+      Laufen_1: -1881388578
+      Laufen_2: 1920626667
+      Laufen_3: -1121888137
+      Laufen_4: 1420480689
+      Laufen_5: 501041169
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 484265140}
   - component: {fileID: 484265145}
   - component: {fileID: 484265144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_Skeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!61 &484265141
@@ -1208,7 +1208,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665919162}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -2004,7 +2004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  jumpPower: 9
+  jumpPower: 10
   rb: {fileID: 933898113}
   groundcheck: {fileID: 1150147281}
   groundLayer:
