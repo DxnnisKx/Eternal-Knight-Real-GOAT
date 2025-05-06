@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
