@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 470e812f9bc5a4642baed1b3b385a64b
+guid: 1d60cc89cefa996478b871d8652fdd4d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7296289708910029301
-    second: CheckboxChecked_0
+      213: -4009337327525605255
+    second: Pixelart-Background-NEW_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CheckboxChecked_0
+      name: Pixelart-Background-NEW_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 31
-        width: 470
-        height: 450
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f9abe535d0a14560800000000000000
-      internalID: 7296289708910029301
+      spriteID: 9705f1861f8fb58c0800000000000000
+      internalID: -4009337327525605255
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      CheckboxChecked_0: 7296289708910029301
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

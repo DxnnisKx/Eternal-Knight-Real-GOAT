@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Burg_Im_Abendlicht_0: 3356584005911843710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
