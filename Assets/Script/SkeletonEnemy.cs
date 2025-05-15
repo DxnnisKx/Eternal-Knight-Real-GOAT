@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Interface for anything that can take damage
 public interface IDamageable
@@ -15,18 +16,29 @@ public class SkeletonEnemy : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckDistance = 0.6f;
     [SerializeField] private float edgeCheckDistance = 0.5f;
-    [SerializeField] private float directionChangeDelay = 0.5f; // Prevent rapid direction changes
+    [SerializeField] private float directionChangeDelay = 0.5f;
 
     [Header("Attack")]
-    [SerializeField] private float attackRange = 1f;
+    [SerializeField] private float attackRange = 1.5f; // Increased attack range for better detection
     [SerializeField] private int attackDamage = 1;
     [SerializeField] private float attackCooldown = 1.5f;
     [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private string deathSceneName = "DeathScene";
+    [SerializeField] private GameObject attackHitbox; // Optional: reference to a child object representing the sword hitbox
 
     [Header("Detection")]
     [SerializeField] private float playerDetectionRange = 5f;
-    [SerializeField] private float playerChaseSpeed = 3f; // Faster when chasing player
-    [SerializeField] private float returnToPatrolTime = 5f; // Time before resuming patrol if player escapes
+    [SerializeField] private float playerChaseSpeed = 3f;
+    [SerializeField] private float returnToPatrolTime = 5f;
+
+    [Header("Physics Properties")]
+    [SerializeField] private float mass = 5f; // Make skeleton heavier
+    [SerializeField] private float linearDrag = 2f; // Add some drag to prevent sliding
+    [SerializeField] private bool freezeRotation = true; // Prevent rotation
+
+    [Header("Debugging")]
+    [SerializeField] private bool debugSpriteDirection = false;
+    [SerializeField] private bool showAttackDebug = true;
 
     // References
     private Rigidbody2D rb;
@@ -34,7 +46,7 @@ public class SkeletonEnemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     // State variables
-    private int facingDirection = -1; // -1 left, 1 right
+    private int facingDirection = -1;
     private bool isAttacking = false;
     private float attackTimer = 0f;
     private bool playerDetected = false;
@@ -43,6 +55,8 @@ public class SkeletonEnemy : MonoBehaviour
     private bool canChangeDirection = true;
     private float lastPlayerDetectionTime;
     private bool isChasing = false;
+    private bool playerInContactWithEnemy = false;
+    private bool hasDealtDamage = false; // Track if we've already dealt damage in this attack
 
     // Animation parameters
     private const string WALK_ANIMATION = "IsWalking";
@@ -57,6 +71,22 @@ public class SkeletonEnemy : MonoBehaviour
 
         // Find the player
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
+
+        // Configure Rigidbody2D for proper physics behavior
+        if (rb != null)
+        {
+            rb.mass = mass;
+            rb.linearDamping = linearDrag;
+            rb.freezeRotation = freezeRotation;
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous; // Better collision detection
+            rb.gravityScale = 3f; // Keep affected by gravity but heavier
+        }
+
+        // Initialize attack hitbox if defined
+        if (attackHitbox != null)
+        {
+            attackHitbox.SetActive(false);
+        }
     }
 
     void Update()
@@ -69,7 +99,7 @@ public class SkeletonEnemy : MonoBehaviour
         DetectPlayer();
 
         // Try to attack if player detected and in range
-        if (playerDetected && CanAttackPlayer())
+        if (playerDetected && CanAttackPlayer() && !isAttacking)
         {
             Attack();
         }
@@ -92,6 +122,25 @@ public class SkeletonEnemy : MonoBehaviour
         {
             isChasing = false;
         }
+
+        // Debug sprite direction if enabled
+        if (debugSpriteDirection)
+        {
+            Debug.Log($"Facing Direction: {facingDirection}, Sprite FlipX: {spriteRenderer.flipX}, " +
+                      $"Player Position: {(player != null ? player.position.x.ToString() : "null")}, " +
+                      $"Enemy Position: {transform.position.x}, Is Attacking: {isAttacking}");
+        }
+
+        // Debug attack range
+        if (showAttackDebug && player != null)
+        {
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+            if (distanceToPlayer <= playerDetectionRange)
+            {
+                Debug.Log($"Distance to player: {distanceToPlayer}, Attack Range: {attackRange}, " +
+                          $"Can Attack: {distanceToPlayer <= attackRange && attackTimer <= 0}");
+            }
+        }
     }
 
     void DetectPlayer()
@@ -107,6 +156,8 @@ public class SkeletonEnemy : MonoBehaviour
         if (playerDetected && !wasDetected)
         {
             isChasing = true;
+            if (showAttackDebug)
+                Debug.Log("Player detected! Starting to chase.");
         }
 
         // Update last detection time while player is in range
@@ -117,8 +168,11 @@ public class SkeletonEnemy : MonoBehaviour
             // If chasing, face towards player
             if (isChasing && !isAttacking && canChangeDirection)
             {
-                facingDirection = (player.position.x > transform.position.x) ? 1 : -1;
-                spriteRenderer.flipX = facingDirection > 0;
+                bool isPlayerToRight = player.position.x > transform.position.x;
+                facingDirection = isPlayerToRight ? 1 : -1;
+
+                // Assuming sprite faces RIGHT by default when not flipped
+                spriteRenderer.flipX = !isPlayerToRight;
             }
         }
     }
@@ -162,6 +216,14 @@ public class SkeletonEnemy : MonoBehaviour
 
         // Move toward player
         rb.linearVelocity = new Vector2(speed * facingDirection, rb.linearVelocity.y);
+
+        // Check if we're getting close enough to attack
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        if (distanceToPlayer <= attackRange && attackTimer <= 0)
+        {
+            if (showAttackDebug)
+                Debug.Log("In attack range! Preparing to attack...");
+        }
     }
 
     IEnumerator ChangeDirection()
@@ -171,7 +233,9 @@ public class SkeletonEnemy : MonoBehaviour
 
         canChangeDirection = false;
         facingDirection *= -1;
-        spriteRenderer.flipX = facingDirection > 0;
+
+        // Assuming sprite faces RIGHT by default when not flipped
+        spriteRenderer.flipX = (facingDirection < 0);
 
         // Wait before allowing direction change again
         yield return new WaitForSeconds(directionChangeDelay);
@@ -189,16 +253,26 @@ public class SkeletonEnemy : MonoBehaviour
 
     void Attack()
     {
-        if (attackTimer <= 0)
+        if (attackTimer <= 0 && !isAttacking)
         {
             isAttacking = true;
+            hasDealtDamage = false;
             rb.linearVelocity = Vector2.zero; // Stop moving while attacking
+
+            if (showAttackDebug)
+                Debug.Log("?? Starting attack animation!");
 
             // Trigger attack animation
             if (animator != null)
+            {
                 animator.SetTrigger(ATTACK_ANIMATION);
+            }
+            else
+            {
+                Debug.LogError("No Animator component found on skeleton enemy!");
+            }
 
-            // Apply damage to player
+            // Apply damage to player through coroutine
             StartCoroutine(AttackCoroutine());
 
             // Reset attack cooldown
@@ -208,47 +282,95 @@ public class SkeletonEnemy : MonoBehaviour
 
     IEnumerator AttackCoroutine()
     {
-        // Wait for the animation to reach the attack point (around halfway)
+        // Wait for the animation to reach the attack point (may need adjustment based on your actual animation)
         yield return new WaitForSeconds(0.3f);
+
+        // Activate hitbox if available
+        if (attackHitbox != null)
+        {
+            attackHitbox.SetActive(true);
+        }
+
+        // Calculate attack position based on facing direction
+        Vector2 attackPos = transform.position + new Vector3(facingDirection * 0.8f, 0f);
+
+        // Draw debug sphere to show attack area
+        if (showAttackDebug)
+        {
+            Debug.DrawRay(transform.position, new Vector3(facingDirection * 0.8f, 0f), Color.red, 0.5f);
+            Debug.Log($"Checking for player at position {attackPos} with radius {attackRange}");
+        }
 
         // Deal damage to player if in range
         Collider2D playerHit = Physics2D.OverlapCircle(
-            transform.position + new Vector3(facingDirection * 0.5f, 0f),
+            attackPos,
             attackRange,
             playerLayer
         );
 
-        if (playerHit != null)
+        if (playerHit != null && !hasDealtDamage)
         {
+            hasDealtDamage = true;
+            Debug.Log("Player hit by skeleton's attack!");
+
             // Try different ways to damage the player
             // Option 1: Try IDamageable interface
             var damageable = playerHit.GetComponent<IDamageable>();
             if (damageable != null)
             {
                 damageable.TakeDamage(attackDamage);
+                Debug.Log("Damaged player via IDamageable interface");
             }
 
             // Option 2: Try to find a method called TakeDamage via SendMessage
             playerHit.SendMessage("TakeDamage", attackDamage, SendMessageOptions.DontRequireReceiver);
 
-            // Option 3: Try to find a method called Damage via SendMessage
-            playerHit.SendMessage("Damage", attackDamage, SendMessageOptions.DontRequireReceiver);
-
-            // Debug log when attacking player
-            Debug.Log("Skeleton attacked player for " + attackDamage + " damage");
+            // Load the death scene when player is hit by the attack
+            Debug.Log("Skeleton successfully attacked player. Loading death scene: " + deathSceneName);
+            SceneManager.LoadScene(deathSceneName);
         }
 
-        // End attack after a short delay (full animation)
-        yield return new WaitForSeconds(0.4f);
+        // Deactivate hitbox after a short time
+        yield return new WaitForSeconds(0.2f);
+        if (attackHitbox != null)
+        {
+            attackHitbox.SetActive(false);
+        }
+
+        // End attack after the full animation
+        yield return new WaitForSeconds(0.5f);
         isAttacking = false;
+
+        if (showAttackDebug)
+            Debug.Log("Attack finished!");
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if it's the player
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerInContactWithEnemy = true;
+            // We don't kill the player immediately on contact anymore
+            // Only the attack animation will trigger death
+            Debug.Log("Player made contact with skeleton, but not dying immediately");
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerInContactWithEnemy = false;
+        }
     }
 
     void UpdateAnimations()
     {
         if (animator != null)
         {
-            // Set walking animation
-            animator.SetBool(WALK_ANIMATION, !isAttacking && rb.linearVelocity.x != 0);
+            // Set walking animation - only walking if not attacking and moving
+            animator.SetBool(WALK_ANIMATION, !isAttacking && Mathf.Abs(rb.linearVelocity.x) > 0.1f);
         }
     }
 
@@ -257,7 +379,7 @@ public class SkeletonEnemy : MonoBehaviour
     {
         // Draw attack range
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + new Vector3(facingDirection * 0.5f, 0), attackRange);
+        Gizmos.DrawWireSphere(transform.position + new Vector3(facingDirection * 0.8f, 0), attackRange);
 
         // Draw detection range
         Gizmos.color = Color.yellow;

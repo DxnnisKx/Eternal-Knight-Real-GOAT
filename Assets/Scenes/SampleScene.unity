@@ -511,6 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpsCounterObject: {fileID: 2046113368}
+  gameMusic: {fileID: 8300000, guid: 417ef3072ee571a49bee8082e754f42e, type: 3}
 --- !u!4 &444634888
 Transform:
   m_ObjectHideFlags: 0
@@ -1891,7 +1892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &797392130
 Transform:
   m_ObjectHideFlags: 0
@@ -2701,7 +2702,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -7008412969330441016, guid: 0358597abdf7bbd4491e0a51beeb6791, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.47, y: 0.53}
@@ -2720,7 +2721,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.06, y: -1.96, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -2750,9 +2751,11 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
+  deathSceneName: DeathScene
   playerDetectionRange: 4
   playerChaseSpeed: 1.5
   returnToPatrolTime: 2
+  debugSpriteDirection: 0
 --- !u!1 &1012730115
 GameObject:
   m_ObjectHideFlags: 0
