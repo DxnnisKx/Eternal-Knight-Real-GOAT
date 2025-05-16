@@ -2644,7 +2644,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.057303783, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2654,7 +2654,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.47, y: 0.53}
+  m_Size: {x: 0.3553924, y: 0.53}
   m_EdgeRadius: 0
 --- !u!212 &988679837
 SpriteRenderer:
@@ -2739,6 +2739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  chaseSpeed: 3
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -2752,10 +2753,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   deathSceneName: DeathScene
+  attackHitbox: {fileID: 0}
   playerDetectionRange: 4
-  playerChaseSpeed: 1.5
   returnToPatrolTime: 2
-  debugSpriteDirection: 0
 --- !u!1 &1012730115
 GameObject:
   m_ObjectHideFlags: 0
