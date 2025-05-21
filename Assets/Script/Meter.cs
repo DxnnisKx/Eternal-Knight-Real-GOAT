@@ -21,6 +21,13 @@ public class MeterDisplay : MonoBehaviour
         meterInt = meters;
 
         // Zeigt die Meterzahl an, mit 2 Dezimalstellen und verhindert negative Meterzahlen
-        meterText.text = Mathf.Max(0, meters).ToString("N0") + " m";
+        if (meterText != null)
+        {
+            meterText.text = Mathf.Max(0, meters).ToString("N0") + " m";
+        }
+        else
+        {
+            Debug.Log("Blabla");
+        }
     }
 }
