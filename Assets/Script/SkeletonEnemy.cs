@@ -8,7 +8,7 @@ public interface IDamageable
     void TakeDamage(int damage);
 }
 
-public class SkeletonEnemy : MonoBehaviour
+public class SkeletonEnemy : MonoBehaviour, IDamageable
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 2f;
@@ -30,11 +30,15 @@ public class SkeletonEnemy : MonoBehaviour
     [SerializeField] private float playerDetectionRange = 5f;
     [SerializeField] private float returnToPatrolTime = 5f;
 
+    [Header("Death")]
+    [SerializeField] private float deathDelay = 1f;
+
     // References
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private Transform player;
+    private BoxCollider2D boxCollider;
 
     // State variables
     private int facingDirection = -1;
@@ -44,17 +48,20 @@ public class SkeletonEnemy : MonoBehaviour
     private float lastPlayerDetectionTime;
     private bool isChasing = false;
     private Vector3 startPosition;
+    private bool isDead = false;
 
     // Animation parameters
-    private readonly int IsWalkingParam = Animator.StringToHash("IsWalking");
-    private readonly int AttackParam = Animator.StringToHash("Attack");
-    private readonly int IdleParam = Animator.StringToHash("Idle");
+    private const string IsWalkingParam = "IsWalking";
+    private const string AttackParam = "Attack";
+    private const string IdleParam = "Idle";
+    private const string DeathParam = "Death";
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         startPosition = transform.position;
 
@@ -83,6 +90,10 @@ public class SkeletonEnemy : MonoBehaviour
 
     void Update()
     {
+        // Don't do anything if dead
+        if (isDead)
+            return;
+
         // Handle attack cooldown
         if (attackTimer > 0)
         {
@@ -279,17 +290,15 @@ public class SkeletonEnemy : MonoBehaviour
     {
         if (animator != null)
         {
-            // Set walking animation - only walking if not attacking and moving
-            bool isWalking = !isAttacking && Mathf.Abs(rb.linearVelocity.x) > 0.1f;
+            // Only walking if not attacking, not idle, and velocity is significant
+            bool isMoving = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
+            bool isWalking = !isAttacking && isMoving;
 
-            // Use cached animation parameter IDs for better performance
+            // Set walking animation
             animator.SetBool(IsWalkingParam, isWalking);
 
-            // Optionally set idle animation if your animator has that parameter
-            if (IdleParam != 0) // 0 means parameter wasn't found
-            {
-                animator.SetBool(IdleParam, !isWalking && !isAttacking);
-            }
+            // Set idle animation when not walking and not attacking
+            animator.SetBool(IdleParam, !isWalking && !isAttacking);
         }
     }
 
@@ -311,6 +320,86 @@ public class SkeletonEnemy : MonoBehaviour
             attackHitbox.SetActive(false);
         }
         isAttacking = false;
+    }
+
+    // Implement IDamageable interface to handle player jumping on top
+    public void TakeDamage(int damage)
+    {
+        if (isDead)
+            return;
+
+        // Kill the skeleton
+        Die();
+    }
+
+    // Handle player collision - check if player is jumping on top of skeleton
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isDead)
+            return;
+
+        // Check if it's the player
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Get contact points
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                // Check if player is coming from above (normal points down from player perspective)
+                if (contact.normal.y < -0.7f)
+                {
+                    // Player is on top, trigger death
+                    Die();
+
+                    // Give player a slight bounce
+                    Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
+                    if (playerRb != null)
+                    {
+                        playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, 7f);
+                    }
+
+                    break;
+                }
+            }
+        }
+    }
+
+    private void Die()
+    {
+        isDead = true;
+
+        // Stop movement
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 0;
+
+        // Trigger death animation
+        if (animator != null)
+        {
+            animator.SetTrigger(DeathParam);
+        }
+
+        // Disable attacks
+        if (attackHitbox != null)
+        {
+            attackHitbox.SetActive(false);
+        }
+
+        // Disable collider to prevent further interactions
+        if (boxCollider != null)
+        {
+            boxCollider.enabled = false;
+        }
+
+        // Destroy after animation plays
+        StartCoroutine(DestroyAfterDelay());
+    }
+
+    private IEnumerator DestroyAfterDelay()
+    {
+        // Wait for death animation to play
+        yield return new WaitForSeconds(deathDelay);
+
+        // Destroy the enemy
+        Destroy(gameObject);
     }
 
     // Optional: Draw gizmos for debugging
